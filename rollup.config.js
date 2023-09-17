@@ -2,7 +2,7 @@ import typescript from '@rollup/plugin-typescript';
 import { dts } from 'rollup-plugin-dts';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import { babel } from '@rollup/plugin-babel';
+import esbuild from 'rollup-plugin-esbuild';
 
 export default [
   {
@@ -22,7 +22,7 @@ export default [
       nodeResolve({
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       }),
-      babel({ babelHelpers: 'bundled' }),
+      esbuild(),
     ],
   },
   {
