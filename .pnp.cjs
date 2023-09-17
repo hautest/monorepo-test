@@ -16,6 +16,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."\
       },\
       {\
+        "name": "hooks",\
+        "reference": "workspace:packages/hooks"\
+      },\
+      {\
         "name": "ui",\
         "reference": "workspace:packages/ui"\
       }\
@@ -23,6 +27,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
+      ["hooks", ["workspace:packages/hooks"]],\
       ["root", ["workspace:."]],\
       ["ui", ["workspace:packages/ui"]]\
     ],\
@@ -42,6 +47,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["nx", "virtual:27294a026b403a125127a01c506649a66f963443d98b165f595b35d84f3a7f3acf7257fab805d9a5c66db9a766498808df6100c11de52d69e5f1edabcba2aa61#npm:16.8.1"],\
             ["prettier", "npm:3.0.3"],\
             ["rollup", "npm:3.29.2"],\
+            ["rollup-plugin-dts", "virtual:36a01d8083315b8a6e8362097258ea8bc0f9dfb672cb210742e054760850c673a1038f542a6b7156397b5275ace8ee0482231cac5e8898044fa1a1c29f78ee5b#npm:6.0.2"],\
             ["tslib", "npm:2.6.2"],\
             ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
           ],\
@@ -217,6 +223,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@jest/schemas", "npm:29.6.3"],\
             ["@sinclair/typebox", "npm:0.27.8"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jridgewell/sourcemap-codec", [\
+        ["npm:1.4.15", {\
+          "packageLocation": "./.yarn/cache/@jridgewell-sourcemap-codec-npm-1.4.15-a055fb62cf-b881c7e503.zip/node_modules/@jridgewell/sourcemap-codec/",\
+          "packageDependencies": [\
+            ["@jridgewell/sourcemap-codec", "npm:1.4.15"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3263,6 +3278,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["hooks", [\
+        ["workspace:packages/hooks", {\
+          "packageLocation": "./packages/hooks/",\
+          "packageDependencies": [\
+            ["hooks", "workspace:packages/hooks"],\
+            ["@types/react", "npm:18.2.21"],\
+            ["@types/react-dom", "npm:18.2.7"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:3d1524b78fc3d51ad26b33d9ce29be0e1d83b93b5b5aa48146b992af4d63aa61e0ec8f3791d7958e8b3ab9d906b0c8d986646ae3080c5f71fe6d66b52339642c#npm:18.2.0"],\
+            ["rollup", "npm:3.29.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
       ["hosted-git-info", [\
         ["npm:2.8.9", {\
           "packageLocation": "./.yarn/cache/hosted-git-info-npm-2.8.9-62c44fa93f-c955394bda.zip/node_modules/hosted-git-info/",\
@@ -4219,6 +4248,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/lru-cache-npm-7.18.3-e68be5b11c-e550d77238.zip/node_modules/lru-cache/",\
           "packageDependencies": [\
             ["lru-cache", "npm:7.18.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["magic-string", [\
+        ["npm:0.30.3", {\
+          "packageLocation": "./.yarn/cache/magic-string-npm-0.30.3-65e96f1e9d-a5a9ddf9bd.zip/node_modules/magic-string/",\
+          "packageDependencies": [\
+            ["magic-string", "npm:0.30.3"],\
+            ["@jridgewell/sourcemap-codec", "npm:1.4.15"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5609,10 +5648,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:9dce388d82c018b4a7af5edc7243e51f7023d1ab93a923b3959d0066ac6881c93b965a0932486426cbefa96c9c8e47849d5ff541d2404b8aca246480fa32f0d2#npm:18.2.0", {\
-          "packageLocation": "./.yarn/__virtual__/react-dom-virtual-96fbc9ab56/0/cache/react-dom-npm-18.2.0-dd675bca1c-7d323310be.zip/node_modules/react-dom/",\
+        ["virtual:3d1524b78fc3d51ad26b33d9ce29be0e1d83b93b5b5aa48146b992af4d63aa61e0ec8f3791d7958e8b3ab9d906b0c8d986646ae3080c5f71fe6d66b52339642c#npm:18.2.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-dom-virtual-15c171da0f/0/cache/react-dom-npm-18.2.0-dd675bca1c-7d323310be.zip/node_modules/react-dom/",\
           "packageDependencies": [\
-            ["react-dom", "virtual:9dce388d82c018b4a7af5edc7243e51f7023d1ab93a923b3959d0066ac6881c93b965a0932486426cbefa96c9c8e47849d5ff541d2404b8aca246480fa32f0d2#npm:18.2.0"],\
+            ["react-dom", "virtual:3d1524b78fc3d51ad26b33d9ce29be0e1d83b93b5b5aa48146b992af4d63aa61e0ec8f3791d7958e8b3ab9d906b0c8d986646ae3080c5f71fe6d66b52339642c#npm:18.2.0"],\
             ["@types/react", "npm:18.2.21"],\
             ["loose-envify", "npm:1.4.0"],\
             ["react", "npm:18.2.0"],\
@@ -5862,6 +5901,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["rollup-plugin-dts", [\
+        ["npm:6.0.2", {\
+          "packageLocation": "./.yarn/cache/rollup-plugin-dts-npm-6.0.2-090a0bc313-0f36a4a485.zip/node_modules/rollup-plugin-dts/",\
+          "packageDependencies": [\
+            ["rollup-plugin-dts", "npm:6.0.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:36a01d8083315b8a6e8362097258ea8bc0f9dfb672cb210742e054760850c673a1038f542a6b7156397b5275ace8ee0482231cac5e8898044fa1a1c29f78ee5b#npm:6.0.2", {\
+          "packageLocation": "./.yarn/__virtual__/rollup-plugin-dts-virtual-4958c8d78a/0/cache/rollup-plugin-dts-npm-6.0.2-090a0bc313-0f36a4a485.zip/node_modules/rollup-plugin-dts/",\
+          "packageDependencies": [\
+            ["rollup-plugin-dts", "virtual:36a01d8083315b8a6e8362097258ea8bc0f9dfb672cb210742e054760850c673a1038f542a6b7156397b5275ace8ee0482231cac5e8898044fa1a1c29f78ee5b#npm:6.0.2"],\
+            ["@babel/code-frame", "npm:7.22.13"],\
+            ["@types/rollup", null],\
+            ["@types/typescript", null],\
+            ["magic-string", "npm:0.30.3"],\
+            ["rollup", "npm:3.29.2"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
+          ],\
+          "packagePeers": [\
+            "@types/rollup",\
+            "@types/typescript",\
+            "rollup",\
+            "typescript"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["root", [\
         ["workspace:.", {\
           "packageLocation": "./",\
@@ -5876,6 +5943,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["nx", "virtual:27294a026b403a125127a01c506649a66f963443d98b165f595b35d84f3a7f3acf7257fab805d9a5c66db9a766498808df6100c11de52d69e5f1edabcba2aa61#npm:16.8.1"],\
             ["prettier", "npm:3.0.3"],\
             ["rollup", "npm:3.29.2"],\
+            ["rollup-plugin-dts", "virtual:36a01d8083315b8a6e8362097258ea8bc0f9dfb672cb210742e054760850c673a1038f542a6b7156397b5275ace8ee0482231cac5e8898044fa1a1c29f78ee5b#npm:6.0.2"],\
             ["tslib", "npm:2.6.2"],\
             ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
           ],\
@@ -6643,7 +6711,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.2.21"],\
             ["@types/react-dom", "npm:18.2.7"],\
             ["react", "npm:18.2.0"],\
-            ["react-dom", "virtual:9dce388d82c018b4a7af5edc7243e51f7023d1ab93a923b3959d0066ac6881c93b965a0932486426cbefa96c9c8e47849d5ff541d2404b8aca246480fa32f0d2#npm:18.2.0"],\
+            ["react-dom", "virtual:3d1524b78fc3d51ad26b33d9ce29be0e1d83b93b5b5aa48146b992af4d63aa61e0ec8f3791d7958e8b3ab9d906b0c8d986646ae3080c5f71fe6d66b52339642c#npm:18.2.0"],\
             ["rollup", "npm:3.29.2"]\
           ],\
           "linkType": "SOFT"\

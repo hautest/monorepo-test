@@ -1,4 +1,5 @@
 import typescript from '@rollup/plugin-typescript';
+import { dts } from 'rollup-plugin-dts';
 
 export default {
   input: 'src/index.ts',
@@ -10,5 +11,5 @@ export default {
       preserveModulesRoot: 'src',
     },
   ],
-  plugins: [typescript()],
+  plugins: [typescript(), dts()],
 };
