@@ -8,7 +8,8 @@
     "@types/react-dom": "^18.0.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^3.29.2"
+    "rollup": "^3.29.2",
+    "typescript": "^5.2.2"
   },
   "main": "dist/index.cjs",
   "types": "dist/index.d.ts",
@@ -16,5 +17,6 @@
   "type": "module",
   "scripts": {
     "build": "rollup --config ../../rollup.config.js"
-  }
+  },
+  "version": "1.0.0"
 }

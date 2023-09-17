@@ -16,5 +16,6 @@
   "type": "module",
   "scripts": {
     "build": "rollup --config ../../rollup.config.js"
-  }
+  },
+  "version": "1.0.0"
 }
