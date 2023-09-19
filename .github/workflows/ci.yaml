@@ -1,56 +1,20 @@
 name: ci
+
 on:
-  push:
+  pull_request:
     branches:
       - main
-  pull_request:
 
-  # jobs:
-  #   Lint:
-  #     name: Lint
-  #     runs-on: ubuntu-latest
-  #     steps:
-  #       - uses: actions/checkout@v3
-
-  #       - uses: martijnhols/actions-cache/restore@v3
-  #         with:
-  #           path: |
-  #             **/.ultra.cache.json
-  #             packages/**/dist
-  #             document/build
-  #             storybook/storybook-static
-  #           key: ultra-runner-cache
-  #           restore-keys: |
-  #             ultra-runner-cache
-
-  #       - name: install deps
-  #         run: yarn install --immutable
-
-  #       - uses: martijnhols/actions-cache/save@v3
-  #         if: github.event_name == 'push'
-  #         with:
-  #           path: |
-  #             **/.ultra.cache.json
-  #             packages/**/dist
-  #             document/build
-  #             storybook/storybook-static
-  #           key: ultra-runner-cache
-
-  #       - name: Lint
-  #         run: yarn lint
-
-  Build:
-    name: Build
+jobs:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - uses: martijnhols/actions-cache/restore@v3
-
-      - name: install deps
+      - name: Install dependencies
         run: yarn install --immutable
 
-      - uses: martijnhols/actions-cache/save@v3
-
       - name: Build
-        run: yarn build:ci
+        run: yarn build
