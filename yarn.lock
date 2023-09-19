@@ -1341,10 +1341,12 @@ __metadata:
     "@types/react-dom": 18.2.7
     eslint: 8.49.0
     eslint-config-next: 13.4.19
+    hooks: "workspace:*"
     next: 13.4.19
     react: 18.2.0
     react-dom: 18.2.0
     typescript: 5.2.2
+    ui: "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -3809,7 +3811,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hooks@workspace:packages/hooks":
+"hooks@workspace:*, hooks@workspace:packages/hooks":
   version: 0.0.0-use.local
   resolution: "hooks@workspace:packages/hooks"
   dependencies:
@@ -7729,7 +7731,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ui@workspace:packages/ui":
+"ui@workspace:*, ui@workspace:packages/ui":
   version: 0.0.0-use.local
   resolution: "ui@workspace:packages/ui"
   dependencies:
