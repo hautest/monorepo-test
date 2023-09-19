@@ -28,6 +28,8 @@
   },
   "packageManager": "yarn@3.6.3",
   "scripts": {
-    "build": "npx lerna run build"
+    "build": "npx lerna run build",
+    "build:ui": "npx lerna run build --scope=ui",
+    "build:app1": "npx lerna run build --scope=app1"
   }
 }
