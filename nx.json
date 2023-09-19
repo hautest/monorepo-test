@@ -3,9 +3,8 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": []
+        "cacheableOperations": ["build", "test"]
       }
     }
-  },
-  "targetDefaults": {}
+  }
 }
